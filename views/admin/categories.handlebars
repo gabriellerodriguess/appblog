@@ -1,12 +1,17 @@
 <h2>Category list</h2>
-<hr>
+<br>
 <a href="/admin/categories/addcategory"><button class="btn btn-success">New Category</button></a>
 
 {{#each categories}}
     <div class="card mt-4">
         <div class="card-body">
             <h4>{{name}}</h4>
-            <small>{{slug}}</small>
+            <small>{{slug}}</small><br>
+            <a href="/admin/categories/edit/{{_id}}"><button class="btn btn-sm btn-success mt-2">Edit Category</button></a> 
+            <form action="/admin/categories/delete" method="post">
+                <input type="hidden" name="id" value="{{_id}}">
+                <button type="submit" class="btn  btn-sm mt-2 btn-danger">Delete category</button>
+            </form>
         </div>
     </div>
 
