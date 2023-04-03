@@ -1,0 +1,23 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Blog do curso de Node.js</h1>
+    <p class="lead">Blog criado para testar habilidades em Express com Node.js e Mongodb.</p>
+  </div>
+</div>
+<hr />
+<h2>Recents posts:</h2>
+
+{{#each posts}}
+    <div class="card">
+        <div class="card-body"> 
+            <h6>{{title}}</h6>
+            <p>{{content}}</p>
+            <a href="/posts/{{slug}}" class="btn btn-success">Leia mais...</a>
+            <hr />
+            <small>{{category.name}}</small> <br />
+            <small>Data de publição {{date}}</small>
+        </div>
+    </div>
+    {{else}}
+    <p></p>
+{{/each}}
